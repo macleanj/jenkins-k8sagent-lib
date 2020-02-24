@@ -11,6 +11,6 @@ spec:
 metadata:
   name: jnlp
   annotations:
-    container.apparmor.security.beta.kubernetes.io/jenkins-builder: unconfined
-    # container.seccomp.security.alpha.kubernetes.io/jenkins-builder: unconfined
+    container.apparmor.security.beta.kubernetes.io/jnlp: unconfined
+    # container.seccomp.security.alpha.kubernetes.io/jnlp: unconfined
     
