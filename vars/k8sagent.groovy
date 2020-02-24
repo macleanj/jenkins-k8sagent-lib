@@ -13,9 +13,11 @@ def call(Map opts = [:]) {
 
   def comps = name.split('\\+|-').toList()
 
-  if (name != 'base') {
-    comps = comps.plus(0, 'base')
-  }
+  // Bug fix. JML
+  // base needs to be explicitly configured
+  // if (name != 'base') {
+  //   comps = comps.plus(0, 'base')
+  // }
 
   def templates = []
   String template
