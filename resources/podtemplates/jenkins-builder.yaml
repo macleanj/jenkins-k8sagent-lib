@@ -4,7 +4,7 @@ metadata:
     # container.seccomp.security.alpha.kubernetes.io/jenkins-builder: unconfined
 spec:
   containers:
-  - name: jenkins_builder
+  - name: jenkins-builder
     image: jmaclean/jenkins-builder:0.5.7
     workingDir: /home/jenkins/agent
     securityContext:
