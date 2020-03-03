@@ -1,10 +1,10 @@
 metadata:
   annotations:
-    container.apparmor.security.beta.kubernetes.io/jenkins-builder: unconfined
-    # container.seccomp.security.alpha.kubernetes.io/jenkins-builder: unconfined
+    container.apparmor.security.beta.kubernetes.io/jenkins_builder: unconfined
+    # container.seccomp.security.alpha.kubernetes.io/jenkins_builder: unconfined
 spec:
   containers:
-  - name: jenkins-builder
+  - name: jenkins_builder
     image: jmaclean/jenkins-builder:0.5.7
     workingDir: /home/jenkins/agent
     securityContext:
