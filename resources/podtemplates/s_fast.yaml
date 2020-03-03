@@ -2,7 +2,7 @@ spec:
   nodeSelector:
     builder: "fast"
   containers:
-  - name: jnlp
+  - name: jenkins-builder
     resources:
       limits:
         memory: 31Gi

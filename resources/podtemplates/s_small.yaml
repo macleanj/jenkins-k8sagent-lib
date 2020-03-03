@@ -1,6 +1,6 @@
 spec:
   containers:
-  - name: jnlp
+  - name: jenkins-builder
     resources:
       limits:
         memory: 8Gi
