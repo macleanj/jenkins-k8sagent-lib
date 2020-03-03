@@ -14,3 +14,9 @@ Example:
 ```
 
 ```
+
+# Changes
+- This file
+- vars/k8sagent.groovy (fixed comps = comps.plus(0, 'base') issue)
+- resources/podTemplate all (self managed)
+- 

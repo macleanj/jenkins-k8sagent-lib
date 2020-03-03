@@ -1,16 +1,23 @@
-spec:
-  serviceAccountName: jenkins
-  containers:
-  - name: jnlp
-    workingDir: /home/jenkins/agent
-    image: r.j3ss.co/img:v0.5.6
-    imagePullPolicy: IfNotPresent
-    command:
-    - cat
-    tty: true
 metadata:
   name: jnlp
+  labels:
+    name: jnlp
   annotations:
-    container.apparmor.security.beta.kubernetes.io/jnlp: unconfined
-    container.seccomp.security.alpha.kubernetes.io/jnlp: unconfined
-    
+    container.apparmor.security.beta.kubernetes.io/jenkins-builder: unconfined
+    # container.seccomp.security.alpha.kubernetes.io/jenkins-builder: unconfined
+spec:
+  containers:
+  - name: jnlp
+    image: jmaclean/jenkins-jnlp-slave:3.40-1
+    workingDir: /home/jenkins/agent
+    securityContext:
+      runAsUser: 1000
+  - name: jenkins-builder
+    image: jmaclean/jenkins-builder:0.5.7
+    workingDir: /home/jenkins/agent
+    securityContext:
+      runAsUser: 1000
+      rawProc: true
+    command:
+    - cat
+    tty: true 
