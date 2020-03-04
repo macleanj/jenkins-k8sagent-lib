@@ -12,7 +12,13 @@ spec:
     workingDir: /home/jenkins/agent
     securityContext:
       runAsUser: 1000
-    resources: {}
+    resources:
+      requests:
+        memory: 128Mi
+        cpu: 250m
+      limits:
+        memory: 1Gi
+        cpu: 1
   - name: jenkins-builder
     image: jmaclean/jenkins-builder:0.5.7
     workingDir: /home/jenkins/agent
