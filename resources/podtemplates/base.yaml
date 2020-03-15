@@ -1,7 +1,4 @@
 metadata:
-  annotations:
-    container.apparmor.security.beta.kubernetes.io/jenkins-builder: unconfined
-    # container.seccomp.security.alpha.kubernetes.io/jenkins-builder: unconfined
   name: jnlp
   labels:
     name: jnlp
@@ -22,13 +19,3 @@ spec:
         memory: 128Mi
         cpu: 250m
         ephemeral-storage: 1Gi
-  - name: jenkins-builder
-    image: jmaclean/jenkins-builder:0.5.7
-    imagePullPolicy: Always
-    workingDir: /home/jenkins/agent
-    securityContext:
-      runAsUser: 1000
-      rawProc: true
-    command:
-    - cat
-    tty: true
